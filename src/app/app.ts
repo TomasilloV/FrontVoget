@@ -129,7 +129,7 @@ export class App implements OnInit {
     {
       name: 'Etni Hernandez',
       role: 'Desarrolladora Full Stack',
-      image: 'https://randomuser.me/api/portraits/women/63.jpg',
+      image: 'https://randomuser.me/api/portraits/women/16.jpg',
       social: {
         linkedin: '#',
         twitter: '#',
@@ -139,7 +139,7 @@ export class App implements OnInit {
     {
       name: 'Oswaldo nuñez',
       role: 'Desarrolladora Full Stack',
-      image: 'https://randomuser.me/api/portraits/women/10.jpg',
+      image: 'https://randomuser.me/api/portraits/women/5.jpg',
       social: {
         linkedin: '#',
         twitter: '#',
