@@ -1,23 +1,231 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- Barra de navegación -->
+<header class="header">
+  <div class="container">
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#" class="logo-text">VOGET</a>
+      </div>
+      <div class="nav-links">
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#proyectos" class="nav-link">Proyectos</a>
+        <a href="#equipo" class="nav-link">Equipo</a>
+        <a href="#contacto" class="btn btn-outline">Contacto</a>
+      </div>
+      <button class="menu-toggle" (click)="menuOpen = !menuOpen">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- Sección Hero -->
+<section id="inicio" class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content" data-aos="fade-up">
+        <h1>Transformamos ideas en <span class="highlight">soluciones digitales</span> excepcionales</h1>
+        <p>En Voget, creamos experiencias digitales que impulsan el éxito de tu negocio.</p>
+        <div class="hero-buttons">
+          <a href="#contacto" class="btn">Contáctanos</a>
+          <a href="#servicios" class="btn btn-outline">Nuestros Servicios</a>
+        </div>
+      </div>
+      <div class="hero-image" data-aos="fade-left">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Desarrollo de software" class="float">
+      </div>
+    </div>
+  </div>
+  <div class="wave">
+    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 80L60 74.7C120 69 240 60 360 50C480 40 600 30 720 35C840 40 960 60 1080 65C1200 70 1320 60 1380 55L1440 50V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0V80Z" fill="#f8f9fa"/>
+    </svg>
+  </div>
+</section>
+
+<!-- Sección de Servicios -->
+<section id="servicios" class="services">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Nuestros Servicios</h2>
+      <p>Ofrecemos soluciones tecnológicas integrales para potenciar tu negocio</p>
+    </div>
+    <div class="services-grid">
+      <div *ngFor="let service of services" class="service-card" data-aos="fade-up" [attr.data-aos-delay]="services.indexOf(service) * 100">
+        <div class="service-icon">
+          <mat-icon>{{service.icon}}</mat-icon>
+        </div>
+        <h3>{{service.title}}</h3>
+        <p>{{service.description}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Proyectos -->
+<section id="proyectos" class="projects">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Proyectos Destacados</h2>
+      <p>Algunos de nuestros trabajos más recientes</p>
+    </div>
+    <div class="projects-carousel" data-aos="fade-up">
+      <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let project of projects">
+          <ng-template carouselSlide>
+            <div class="project-card">
+              <div class="project-image">
+                <img [src]="project.image" [alt]="project.title">
+                <div class="project-overlay">
+                  <h3>{{project.title}}</h3>
+                  <p>{{project.description}}</p>
+                  <div class="project-tags">
+                    <span *ngFor="let tech of project.technologies">{{tech}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Equipo -->
+<section id="equipo" class="team">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Nuestro Equipo</h2>
+      <p>Conoce al talentoso equipo detrás de Voget</p>
+    </div>
+    <div class="team-grid">
+      <div *ngFor="let member of team" class="team-member" data-aos="fade-up" [attr.data-aos-delay]="team.indexOf(member) * 100">
+        <img [src]="member.image" [alt]="member.name">
+        <h3>{{member.name}}</h3>
+        <p class="role">{{member.role}}</p>
+        <div class="social-links">
+          <a [href]="member.social.linkedin" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+          <a [href]="member.social.twitter" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+          <a [href]="member.social.github" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Contacto -->
+<section id="contacto" class="contact">
+  <div class="container">
+    <div class="contact-container">
+      <div class="contact-info" data-aos="fade-right">
+        <h2>Contáctanos</h2>
+        <p>¿Tienes un proyecto en mente? ¡Hablemos sobre cómo podemos ayudarte a hacerlo realidad!</p>
+        
+        <div class="contact-method">
+          <mat-icon>email</mat-icon>
+          <div>
+            <h4>Correo Electrónico</h4>
+            <p>info@voget.com</p>
+          </div>
+        </div>
+        
+        <div class="contact-method">
+          <mat-icon>phone</mat-icon>
+          <div>
+            <h4>Teléfono</h4>
+            <p>+1 234 567 890</p>
+          </div>
+        </div>
+        
+        <div class="contact-method">
+          <mat-icon>location_on</mat-icon>
+          <div>
+            <h4>Ubicación</h4>
+            <p>Ciudad, País</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form" data-aos="fade-left">
+        <form (ngSubmit)="submitContactForm()" #contactForm="ngForm">
+          <div class="form-group">
+            <label for="name">Nombre Completo</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Asunto</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          
+          <button type="submit" class="btn">Enviar Mensaje</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-about">
+        <h3>VOGET</h3>
+        <p>Transformando ideas en realidades digitales excepcionales.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Enlaces Rápidos</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#equipo">Equipo</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-newsletter">
+        <h4>Suscríbete a nuestro boletín</h4>
+        <p>Mantente actualizado con nuestras últimas noticias y ofertas.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Tu correo electrónico" required>
+          <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2023 Voget. Todos los derechos reservados.</p>
+      <div class="footer-legal">
+        <a href="#">Términos y Condiciones</a>
+        <a href="#">Política de Privacidad</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
 <style>
-  :host {
-    --bright-blue: oklch(51.01% 0.274 263.83);
-    --electric-violet: oklch(53.18% 0.28 296.97);
-    --french-violet: oklch(47.66% 0.246 305.88);
-    --vivid-pink: oklch(69.02% 0.277 332.77);
-    --hot-red: oklch(61.42% 0.238 15.34);
-    --orange-red: oklch(63.32% 0.24 31.68);
-
-    --gray-900: oklch(19.37% 0.006 300.98);
-    --gray-700: oklch(36.98% 0.014 302.71);
+    :root {
     --gray-400: oklch(70.9% 0.015 304.04);
 
     --red-to-pink-to-purple-vertical-gradient: linear-gradient(
