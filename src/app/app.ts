@@ -97,7 +97,7 @@ export class App implements OnInit {
   // Datos de ejemplo para el equipo
   team = [
     {
-      name: 'Juan Pérez',
+      name: 'Tomas Villegas',
       role: 'CEO & Fundador',
       image: 'https://randomuser.me/api/portraits/men/32.jpg',
       social: {
@@ -107,7 +107,7 @@ export class App implements OnInit {
       }
     },
     {
-      name: 'María García',
+      name: 'Gaelico',
       role: 'Directora de Desarrollo',
       image: 'https://randomuser.me/api/portraits/women/44.jpg',
       social: {
@@ -117,7 +117,7 @@ export class App implements OnInit {
       }
     },
     {
-      name: 'Carlos López',
+      name: 'Victor Yael',
       role: 'Diseñador UX/UI',
       image: 'https://randomuser.me/api/portraits/men/22.jpg',
       social: {
@@ -127,9 +127,19 @@ export class App implements OnInit {
       }
     },
     {
-      name: 'Ana Martínez',
+      name: 'Etni Hernandez',
       role: 'Desarrolladora Full Stack',
       image: 'https://randomuser.me/api/portraits/women/63.jpg',
+      social: {
+        linkedin: '#',
+        twitter: '#',
+        github: '#',
+      }
+    },
+    {
+      name: 'Oswaldo nuñez',
+      role: 'Desarrolladora Full Stack',
+      image: 'https://randomuser.me/api/portraits/women/10.jpg',
       social: {
         linkedin: '#',
         twitter: '#',
